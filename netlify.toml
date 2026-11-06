@@ -1,0 +1,19 @@
+# Netlify configuration — static site, no build step required.
+# Deploy by dragging this folder into Netlify, or by connecting the Git repository.
+[build]
+  publish = "."
+  command = ""
+
+# Long-cache the fingerprint-free static assets; HTML stays revalidated.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"

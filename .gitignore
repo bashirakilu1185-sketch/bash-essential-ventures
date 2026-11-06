@@ -1,0 +1,16 @@
+# Local-only reference material (original deploy snapshot + previews)
+_original/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Not part of the deployable site
+*.zip
+node_modules/
+.venv/
+__pycache__/
+
+# Single-file offline copy (delivered in the ZIP, not part of the site)
+standalone/
